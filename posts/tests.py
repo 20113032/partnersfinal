@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.test import TestCase
 import unittest
 from posts.models import Client, Project, Message, Transaction
 from django.contrib.auth.models import User
-
 # Create your tests here.
 class ModelsTestCase(unittest.TestCase):
     def setUp(self):
