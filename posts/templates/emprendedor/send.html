@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Message send{% endblock %}
+
+{% block content %}
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+<style>
+div.solid {
+border-top:  2px #28a4c9 solid;
+border-left: 2px #28a4c9 solid;
+border-right: 2px #28a4c9 solid;
+border-bottom: 2px #28a4c9 solid;
+background-color: white;
+padding: 10px;}
+
+body {
+    background-image: url(https://image.ibb.co/hLjASv/Sin_t_tulo_3.jpg);
+}
+
+</style>
+
+<div class="container">
+    <div class="solid" ALIGN=center>
+        <h1 style="color:#1b6d85" for="id_username">YOUR MESSAGE WAS SEND SUCCESSFULLY</h1>
+    </div>
+    <br>
+    <input type="button" onclick=" location.href='/posts/home/' " value="Go Back" name="boton" class="btn btn-danger  btn-sm"/>
+</div>
+
+
+{% endblock %}

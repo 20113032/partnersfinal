@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}My messages{% endblock %}
+
+{% block content %}
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+  <style>
+    div.solid {
+    border-top:  2px #28a4c9 solid;
+    border-left: 2px #28a4c9 solid;
+    border-right: 2px #28a4c9 solid;
+    border-bottom: 2px #28a4c9 solid;
+    background-color: white;
+    padding: 10px;}
+
+    body {
+        background-image: url(https://image.ibb.co/hLjASv/Sin_t_tulo_3.jpg);
+    }
+
+  </style>
+<div class="container">
+  <div class="solid">
+        <div style="background-color:#1b6d85"> <h2 style="color:white">INBOX</h2> </div>
+  </div>
+  <br>
+
+{% if messages.count > 0 %}
+{% for message in messages%}
+<div class="solid">
+  <strong style="color:#1b6d85">Subject:</strong> <a href="/posts/answer/{{message.id}}/">{{ message.title }}</a></h1>
+
+  {% for client in clients %}
+  {% if message.sender == client.user %}
+    {% if client.usertype == '1' %}
+    <br>
+    <strong style="color:#1b6d85">Backer:</strong> {{ client.firstname }} {{ client.lastname }}
+    <br>
+    <strong style="color:#1b6d85">Project:</strong> {{ message.project.projectname }}
+    {% else %}
+    <br>
+    <strong style="color:#1b6d85">Entrepreneur:</strong> {{ client.firstname }} {{ client.lastname }} Project: {{ message.project.projectname }}
+
+    {% endif %}
+  {% endif %}
+  {% endfor %}
+  <br>
+  <strong style="color:#1b6d85">Message:</strong> {{ message.message |truncatewords:"10"}}</p>
+</div>
+<br>
+{% endfor %}
+{% else %}
+<br>
+<div class="solid">
+      <div> <h2 style="color:#1b6d85">YOU DON'T HAVE ANY MESSAGES</h2> </div>
+</div>
+<br>
+{% endif %}
+<input type="button" onclick=" location.href='/posts/home/' " value="Go Back" name="boton" class="btn btn-danger  btn-sm"/>
+
+</div>
+{% endblock %}
