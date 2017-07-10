@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'prototipo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5saggo1oi5a30',
-        'USER': 'mcwxjxvyxkpthy',
-        'PASSWORD': '196ddcf6baae0d281bc9105226c785ef8c1b03707799de065d830e862ede9026',
-        'HOST':'ec2-23-21-246-11.compute-1.amazonaws.com'
+        'NAME': 'd9hu2ueon2oem',
+        'USER': 'gvbbtzhwmrkbvw',
+        'PASSWORD': 'c441b619a07abfbdd3f816916c1e23ca4f53f9ad3491d7ae1c147157ffd0d018',
+        'HOST':'ec2-54-225-236-102.compute-1.amazonaws.com'
     }
 }
 
