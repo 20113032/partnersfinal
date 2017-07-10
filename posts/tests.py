@@ -60,8 +60,8 @@ class ModelsTestCase(unittest.TestCase):
         self.assertEqual(clienttest2.firstname, "firstnametest2")
         self.assertEqual(clienttest1.lastname, "lastnametest1")
         self.assertEqual(clienttest2.lastname, "lastnametest2")
-        self.assertEqual(clienttest1.usertype, 1)
-        self.assertEqual(clienttest2.usertype, 2)
+        self.assertEqual(clienttest1.usertype, '1')
+        self.assertEqual(clienttest2.usertype, '2')
     def testMessage(self):
         messagetest1=Message.objects.get(title="titletest1")
         messagetest2=Message.objects.get(title="titletest2")
