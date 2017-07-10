@@ -83,7 +83,21 @@ DATABASES = {
         'USER': 'gvbbtzhwmrkbvw',
         'PASSWORD': 'c441b619a07abfbdd3f816916c1e23ca4f53f9ad3491d7ae1c147157ffd0d018',
         'HOST':'ec2-54-225-236-102.compute-1.amazonaws.com'
-    }
+    },
+      'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'test',
+    'USER': os.environ.get('PGUSER'),
+    'PASSWORD': os.environ.get('PGPASSWORD'),
+    'HOST': '127.0.0.1',
+  },
+  'test_d9hu2ueon2oem': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'test',
+    'USER': os.environ.get('PGUSER'),
+    'PASSWORD': os.environ.get('PGPASSWORD'),
+    'HOST': '127.0.0.1',
+  }
 }
 
 
