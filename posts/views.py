@@ -247,7 +247,7 @@ def search(request):
     user=request.user
     variables={
     'projects':Project.objects.filter(),
-    'transactions':Transaction.objects.filter(backer=user)
+    'transactions':Transaction.objects.filter(backer=user, valid='truth')
     }
     template=get_template('backer/search.html')
     return HttpResponse(template.render(variables,request))
