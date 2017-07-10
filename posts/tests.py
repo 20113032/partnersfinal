@@ -39,6 +39,8 @@ class ModelsTestCase(unittest.TestCase):
     def testProject(self):
         projecttest1=Project.objects.get(projectname="projectnametest1")
         projecttest2=Project.objects.get(projectname="projectnametest2")
+        usernametest1=User.objects.get(username="usernametest1")
+        usernametest2=User.objects.get(username="usernametest2")
         self.assertEqual(projecttest1.user, usernametest1)
         self.assertEqual(projecttest2.user, usernametest2)
         self.assertEqual(projecttest1.projectname, "projectnametest1")
@@ -50,6 +52,8 @@ class ModelsTestCase(unittest.TestCase):
     def testClient(self):
         clienttest1=Client.objects.get(firstname="firstnametest1")
         clienttest2=Client.objects.get(firstname="firstnametest2")
+        usernametest1=User.objects.get(username="usernametest1")
+        usernametest2=User.objects.get(username="usernametest2")
         self.assertEqual(clienttest1.user, usernametest1)
         self.assertEqual(clienttest2.user, usernametest2)
         self.assertEqual(clienttest1.firstname, "firstnametest1")
@@ -61,6 +65,10 @@ class ModelsTestCase(unittest.TestCase):
     def testMessage(self):
         messagetest1=Message.objects.get(title="titletest1")
         messagetest2=Message.objects.get(title="titletest2")
+        usernametest1=User.objects.get(username="usernametest1")
+        usernametest2=User.objects.get(username="usernametest2")
+        projecttest1=Project.objects.get(projectname="projectnametest1")
+        projecttest2=Project.objects.get(projectname="projectnametest2")
         self.assertEqual(messagetest1.sender, usernametest1)
         self.assertEqual(messagetest2.sender, usernametest2)
         self.assertEqual(messagetest1.recipient, usernametest2)
@@ -74,6 +82,10 @@ class ModelsTestCase(unittest.TestCase):
     def testTransaction(self):
         transactiontest1=Transaction.objects.get(ammount=50.0)
         transactiontest2=Transaction.objects.get(ammount=40.0)
+        usernametest1=User.objects.get(username="usernametest1")
+        usernametest2=User.objects.get(username="usernametest2")
+        projecttest1=Project.objects.get(projectname="projectnametest1")
+        projecttest2=Project.objects.get(projectname="projectnametest2")
         self.assertEqual(transactiontest1.backer, usernametest1)
         self.assertEqual(transactiontest2.backer, usernametest1)
         self.assertEqual(transactiontest1.entreprenuer, usernametest2)
